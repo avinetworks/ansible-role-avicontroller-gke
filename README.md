@@ -88,6 +88,7 @@ be mentioned here as well.
 | `avi_gcp_compute_addresses`         | No           | `Auto-generated`                                          | Array of compute addresses created by role for controllers                       |
 | `avi_controller_affinity`           | No           | `None`                                                    | Sets the k8s affinity of the controller pod                                      |
 | `avi_controller_nodeselector`       | No           | `None`                                                    | Sets the nodeSelector for the controller pod                                     |
+| `avi_setup_yaml`                    | No           | `None`                                                    | Provided as setup.json to the controller via K8s ConfigMap                       |
 
 ### Advanced variables
 

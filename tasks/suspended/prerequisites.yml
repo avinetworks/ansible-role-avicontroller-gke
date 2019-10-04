@@ -33,7 +33,7 @@
         api_version: 17.2.13
         http_method: get
         tenant: "*"
-        path: serviceengine
+        path: serviceengine?enabled=true
       register: serviceengine
       when:
         - initial_data.status == 200
@@ -47,7 +47,7 @@
         api_version: 17.2.13
         http_method: get
         tenant: "*"
-        path: virtualservice
+        path: virtualservice?enabled=true
       register: virtualservice
       when:
         - initial_data.status == 200

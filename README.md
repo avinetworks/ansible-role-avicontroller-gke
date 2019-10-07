@@ -79,13 +79,16 @@ be mentioned here as well.
 | `avi_gcp_service_account_file`      | No           |                                                           | Location of the service_account_file when using serviceaccount                   |
 | `avi_k8s_auth_kubeconfig`           | No           | `{{ ansible_env.HOME }}/.kube/config`                     | Location of the kubeconfig that we will use                                      |
 | `avi_controller_storage_class_name` | No           | `{{ avi_controller_prefix }}-regionalpd-storageclass-ssd` | Name of the storage class to be used by the controller disk                      |
-| `avi_controller_disk_size`          | No           | `64`                                                      | Controller disk size in GB                                                       |
+| `avi_controller_cpu_count`          | Yes          |                                                           | Controller CPU count                                                             |
+| `avi_controller_memory_size`        | Yes          |                                                           | Controller Memory size GB                                                        |
+| `avi_controller_disk_size`          | No           | `64`                                                      | Controller SSD disk size GB                                                      |
 | `avi_controller_version`            | No           | `18.2.3-9063-20190501.224326`                             | Version of Avi that should be used on the pod                                    |
 | `avi_controller_container_image`    | No           | `avinetworks/controller:{{ avi_controller_version }}`     | The image that will be used to create the controller pod                         |
 | `avi_controller_namespace_labels`   | No           | `None`                                                    | K8s labels you'd like to attach to the namespace                                 |
 | `avi_gcp_compute_addresses`         | No           | `Auto-generated`                                          | Array of compute addresses created by role for controllers                       |
 | `avi_controller_affinity`           | No           | `None`                                                    | Sets the k8s affinity of the controller pod                                      |
 | `avi_controller_nodeselector`       | No           | `None`                                                    | Sets the nodeSelector for the controller pod                                     |
+| `avi_setup_yaml`                    | No           | `None`                                                    | Provided as setup.json to the controller via K8s ConfigMap                       |
 
 ### Advanced variables
 

@@ -43,9 +43,9 @@ avi_controller_k8s_statefulset:
               - name: MANAGEMENT_IP
                 value: "$(MY_POD_NAME).service-{{ avi_namespace }}.{{ avi_namespace }}.svc.cluster.local"
               - name: NUM_CPU
-                value: '8'
+                value: "{{ avi_controller_cpu_count }}"
               - name: NUM_MEMG
-                value: '30'
+                value: "{{ avi_controller_memory_size }}"
               - name: DISK_GB
                 value: "{{ avi_controller_disk_size }}"
               - name: CNTRL_SSH_PORT
@@ -74,9 +74,6 @@ avi_controller_k8s_statefulset:
                 name: xtables
               - mountPath: /dev
                 name: devroot
-              - mountPath: /opt/avi/controller/data/setup.json
-                subPath: setup.json
-                name: controller-config
               - mountPath: /var/lib/avi/etc/setup.json
                 subPath: setup.json
                 name: controller-config

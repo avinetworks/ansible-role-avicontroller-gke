@@ -20,10 +20,6 @@
   loop_control:
     loop_var: index
 
-- name: Avi Controller | GKE | Present | avi_setup_json value
-  debug: var=avi_setup_json
-  when: avi_setup_json is defined
-
 # We run this in a block because environment variables need created for all k8s
 # api calls due to GKE authentication being required for K8s api.
 - name: Avi Controller | GKE | Present | Deploy K8s components

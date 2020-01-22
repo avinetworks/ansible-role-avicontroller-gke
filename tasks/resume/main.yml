@@ -1,6 +1,10 @@
 ---
 # tasks file for avinetworks.avicontroller_gke
 
-- include_tasks: ../present/main.yml
-  vars:
-    avi_statefulset_replicas: 1
+- k8s_scale:
+    api_version: v1
+    kind: StatefulSet
+    name: node-0
+    namespace: "{{ avi_namespace }}"
+    replicas: 1
+    wait_timeout: 60

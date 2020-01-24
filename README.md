@@ -79,8 +79,8 @@ be mentioned here as well.
 | `avi_gcp_service_account_file`      | No           |                                                           | Location of the service_account_file when using serviceaccount                   |
 | `avi_k8s_auth_kubeconfig`           | No           | `{{ ansible_env.HOME }}/.kube/config`                     | Location of the kubeconfig that we will use                                      |
 | `avi_controller_storage_class_name` | No           | `{{ avi_controller_prefix }}-regionalpd-storageclass-ssd` | Name of the storage class to be used by the controller disk                      |
-| `avi_controller_req_cpu`            | No           | `{{ avi_controller_req_cpu // 2 }}`                       | The initial requested CPU from K8s to run the controller.                        |
-| `avi_controller_req_mem`            | No           | `{{ avi_controller_req_mem // 2 }}`                       | The initial requested Memory from the K8s to run the controller.                 |
+| `avi_controller_req_cpu`            | No           | `{{ avi_controller_cpu_count // 2 }}`                     | The initial requested CPU from K8s to run the controller.                        |
+| `avi_controller_req_mem`            | No           | `{{ avi_controller_memory_size // 2 }}`                   | The initial requested Memory from the K8s to run the controller.                 |
 | `avi_controller_cpu_count`          | Yes          | `8`                                                       | Controller CPU count                                                             |
 | `avi_controller_memory_size`        | Yes          | `27`                                                      | Controller Memory size GB                                                        |
 | `avi_controller_disk_size`          | No           | `64`                                                      | Controller SSD disk size GB                                                      |

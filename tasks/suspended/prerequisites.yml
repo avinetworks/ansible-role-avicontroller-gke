@@ -57,6 +57,8 @@
         that:
           - virtualservice.obj.count == 0
           - serviceengine.obj.count == 0
+      when:
+        - initial_data.status == 200
   when:
     - avi_gcp_compute_address_facts.resources|length > 0
     - avi_controller_password is defined

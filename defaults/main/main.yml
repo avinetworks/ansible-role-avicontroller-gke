@@ -8,11 +8,12 @@ avi_controller_username: admin
 avi_statefulset_replicas: 1
 avi_controller_storage_class_name: "{{ avi_controller_prefix }}-regionalpd-storageclass-ssd"
 
-avi_controller_req_cpu: "{{ avi_controller_cpu_count // 2 }}"
-avi_controller_req_mem: "{{ avi_controller_memory_size // 2 }}"
 avi_controller_cpu_count: 8
 avi_controller_memory_size: 27
 avi_controller_disk_size: 64
+
+avi_controller_req_cpu: "{{ avi_controller_cpu_count // 2 }}"
+avi_controller_req_mem: "{{ avi_controller_memory_size // 2 }}"
 
 avi_controller_version: 18.2.3-9063-20190501.224326
 

@@ -10,7 +10,7 @@ avi_controller_storage_class_name: "{{ avi_controller_prefix }}-regionalpd-stora
 
 avi_controller_cpu_count: 8
 avi_controller_memory_size: 27
-avi_controller_disk_size: 64
+avi_controller_disk_size: 128
 avi_controller_req_cpu: "{{ avi_controller_cpu_count // 2 }}"
 avi_controller_req_mem: "{{ avi_controller_memory_size // 2 }}"
 

@@ -29,8 +29,8 @@ avi_controller_k8s_statefulset:
             image: "{{ avi_controller_container_image }}"
             resources:
               requests:
-                cpu: 3
-                memory: 16Gi
+                cpu: "{{ avi_controller_req_cpu }}"
+                memory: "{{ avi_controller_req_mem }}Gi"
             env:
               - name: MY_NODE_NAME
                 valueFrom:

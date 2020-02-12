@@ -7,7 +7,7 @@
 # We also only attempt to connect to controller addresses that we've found.
 #
 # - name: Avi Controller | GKE | Get StatefulSets in Namespace
-#   k8s_facts:
+#   k8s_info:
 #     kind: StatefulSet
 #     namespace: "{{ avi_namespace }}"
 #     api_version: v1

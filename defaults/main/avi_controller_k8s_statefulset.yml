@@ -64,8 +64,6 @@ avi_controller_k8s_statefulset:
               - containerPort: 22
                 name: ssh
             volumeMounts:
-              - mountPath: /vol/kubernetes-assets
-                name: kubernetes-secrets
               - mountPath: /vol
                 name: vol
               - mountPath: /var/run/docker.sock
@@ -83,9 +81,6 @@ avi_controller_k8s_statefulset:
               privileged: true
         serviceAccount: default
         volumes:
-          - name: kubernetes-secrets
-            secret:
-              secretName: kubernetes-secrets
           - hostPath:
               path: /var/run/docker.sock
             name: run

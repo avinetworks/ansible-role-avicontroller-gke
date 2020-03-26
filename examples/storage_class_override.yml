@@ -1,0 +1,12 @@
+---
+avi_controller_k8s_storage_class:
+  kind: StorageClass
+  apiVersion: storage.k8s.io/v1
+  metadata:
+    name: regionalpd-storageclass-{{ zone_one }}-{{ zone_two }}-ssd
+  provisioner: kubernetes.io/gce-pd
+  allowVolumeExpansion: true
+  parameters:
+    type: pd-ssd
+    replication-type: regional-pd
+    zones: {{ zone_one }}, {{ zone_two }}

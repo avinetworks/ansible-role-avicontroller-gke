@@ -3,7 +3,7 @@
 # spec.template.metadata.labels needs to match .spec.selector.matchLabels
 
 avi_controller_k8s_statefulset:
-  apiVersion: apps/v1beta1
+  apiVersion: apps/v1
   kind: StatefulSet
   metadata:
     name: "node-{{ item.index }}"

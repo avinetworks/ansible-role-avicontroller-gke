@@ -74,9 +74,6 @@ avi_controller_k8s_statefulset:
                 name: xtables
               - mountPath: /dev
                 name: devroot
-              - mountPath: /var/lib/avi/etc/setup.json
-                subPath: setup.json
-                name: controller-config
             securityContext:
               privileged: true
         serviceAccount: default
@@ -93,9 +90,6 @@ avi_controller_k8s_statefulset:
           - hostPath:
               path: /dev
             name: devroot
-          - configMap:
-              name: setup-json
-            name: controller-config
     volumeClaimTemplates:
       - metadata:
           name: vol
